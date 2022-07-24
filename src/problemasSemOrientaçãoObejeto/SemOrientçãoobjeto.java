@@ -3,41 +3,45 @@ package problemasSemOrientaçãoObejeto;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Triangle;
+
 public class SemOrientçãoobjeto {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 
-		double xA, xB, xC, yA, yB, yC;
+		Triangle x, y;
+		x = new Triangle();
+		y = new Triangle();
+
 		System.out.println("Enter the measures of triangle X: ");
-		xA = sc.nextDouble();
-		xB = sc.nextDouble();
-		xC = sc.nextDouble();
+		x.a = sc.nextDouble();
+		x.b = sc.nextDouble();
+		x.c = sc.nextDouble();
 		System.out.println("Enter the mensures of triangle y: ");
-		
-		yA = sc.nextDouble();
-		yB = sc.nextDouble();
-		yC = sc.nextDouble();
-		
-double p = (xA + xB + xC ) / 2.0;
-double areaX = Math.sqrt(p * (p - xA) * (p - xB) * (p-xC));
 
- p = (yA + yB + yC ) / 2.0;
-double areaY = Math.sqrt(p * (p - yA) * (p - yB) * (p-yC));
-System.out.printf("Triangle X area: %4f%n", areaX);
-System.out.printf("Triangle y area: %4f%n", areaY);
+		y.a = sc.nextDouble();
+		y.b = sc.nextDouble();
+		y.c = sc.nextDouble();
 
-if (areaX > areaY) {
-	System.out.println("Langer area: X");
-}
+		double p = (x.a + x.b + x.c) / 2.0;
+		double areaX = x.area();
 
-else {
-	System.out.println("Langer area: Y");
+		double areaY = y.area();
+		System.out.printf("Triangle X area: %4f%n", areaX);
+		System.out.printf("Triangle y area: %4f%n", areaY);
 
-}
+		if (areaX > areaY) {
+			System.out.println("Langer area: X");
+		}
 
-				sc.close();
+		else {
+			System.out.println("Langer area: Y");
+
+		}
+
+		sc.close();
 	}
 
 }
